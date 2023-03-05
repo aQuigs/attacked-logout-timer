@@ -2,10 +2,12 @@ name: run-pre-commit-checks
 run-name: Running pre-commit checks against all files
 on: [push, pull_request]
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - uses: pre-commit/action@v3.0.0
-      with:
-        extra_args: --color always
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pre-commit
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.0
+        with:
+          extra_args: --color always
