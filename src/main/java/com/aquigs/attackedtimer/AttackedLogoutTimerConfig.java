@@ -12,6 +12,6 @@ public interface AttackedLogoutTimerConfig extends Config {
         description = "The message to show to the user when they login"
     )
     default String greeting() {
-        return "Hello";
+        return "Goodbye";
     }
 }
